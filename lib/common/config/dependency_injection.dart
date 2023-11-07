@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 
-import '../../features/cities_shows/shared/cities_shows_injection.dart';
-import '../../features/city_weather_detail/shared/city_weather_detail_injection.dart';
+import '../../features/shows_weather/shared/cities_shows_injection.dart';
 import '../library/app_http_client.dart';
 import '../router/app_router.dart';
 
@@ -30,7 +29,6 @@ mixin DependencyInjection {
   static void _injectFeatures() {
     Future.wait([
       CitiesShowsInjection.inject(getIt),
-      CityWeatherDetailInjection.inject(getIt),
     ]);
   }
 }

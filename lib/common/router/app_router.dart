@@ -13,6 +13,6 @@ class AppRouter extends $AppRouter {
   @override
   final List<AutoRoute> routes = [
     AutoRoute(page: CitiesShowsRoute.page, path: '/'),
-    AutoRoute(page: CityWeatherDetailRoute.page, path: '/city-weather-detail', fullscreenDialog: true),
+    AutoRoute(page: CityForecastWeatherRoute.page, path: '/city-forecast-weather', fullscreenDialog: true),
   ];
 }
