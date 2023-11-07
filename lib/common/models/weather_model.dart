@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../entities/weather_entity.dart';
+
 part 'weather_model.g.dart';
 
 @JsonSerializable()
@@ -17,4 +19,10 @@ class WeatherModel extends Equatable {
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) => _$WeatherModelFromJson(json);
   Map<String, dynamic> toJson() => _$WeatherModelToJson(this);
+}
+
+extension WeatherModelExtension on WeatherModel {
+  WeatherEntity toEntity() {
+    return WeatherEntity(id, main, description, icon);
+  }
 }

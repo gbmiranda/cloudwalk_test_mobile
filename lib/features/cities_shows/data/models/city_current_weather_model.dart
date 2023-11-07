@@ -4,6 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 import '../../../../common/models/location_model.dart';
 import '../../../../common/models/temperature_model.dart';
 import '../../../../common/models/weather_model.dart';
+import '../../domain/entities/city_current_weather_entity.dart';
 
 part 'city_current_weather_model.g.dart';
 
@@ -38,4 +39,18 @@ class CityCurrentWeatherModel extends Equatable {
 
   factory CityCurrentWeatherModel.fromJson(Map<String, dynamic> json) => _$CityCurrentWeatherModelFromJson(json);
   Map<String, dynamic> toJson() => _$CityCurrentWeatherModelToJson(this);
+}
+
+extension CityCurrentWeatherModelExtension on CityCurrentWeatherModel {
+  CityCurrentWeatherEntity toEntity() {
+    return CityCurrentWeatherEntity(
+      name,
+      id,
+      timezone,
+      dateTime,
+      weather?.toEntity(),
+      location?.toEntity(),
+      temperature?.toEntity(),
+    );
+  }
 }

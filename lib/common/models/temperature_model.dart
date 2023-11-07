@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../entities/temperature_entity.dart';
+
 part 'temperature_model.g.dart';
 
 @JsonSerializable()
@@ -25,4 +27,10 @@ class TemperatureModel extends Equatable {
 
   factory TemperatureModel.fromJson(Map<String, dynamic> json) => _$TemperatureModelFromJson(json);
   Map<String, dynamic> toJson() => _$TemperatureModelToJson(this);
+}
+
+extension TemperatureModelExtension on TemperatureModel {
+  TemperatureEntity toEntity() {
+    return TemperatureEntity(feelsLike, humidity, pressure, temp, tempMax, tempMin);
+  }
 }
