@@ -27,9 +27,28 @@ class CityForecastWeather extends StatelessWidget {
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppText(text: 'Qua.', style: AppTextStyle.titleMedium),
-                AppText(text: 'Sol', style: AppTextStyle.titleMedium),
-                AppText(text: 'Máx.: 29º | Mín.: 17º', style: AppTextStyle.bodyMedium),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppText(
+                      text: 'Quarta-feira',
+                      style: AppTextStyle.titleMedium,
+                      margin: EdgeInsets.only(bottom: 5.0),
+                    ),
+                    AppText(text: '08/11', style: AppTextStyle.bodyMedium),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    AppText(
+                      text: 'Ensolarado',
+                      style: AppTextStyle.titleSmall,
+                      margin: EdgeInsets.only(bottom: 5.0),
+                    ),
+                    AppText(text: 'Máx.: 29º | Mín.: 17º', style: AppTextStyle.bodyMedium),
+                  ],
+                ),
               ],
             ),
           );

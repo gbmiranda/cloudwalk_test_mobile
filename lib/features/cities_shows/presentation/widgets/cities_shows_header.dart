@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../common/generated/assets.gen.dart';
+
 class CitiesShowsHeader extends StatefulWidget {
   const CitiesShowsHeader({super.key});
 
@@ -33,9 +35,9 @@ class _CitiesShowsHeaderState extends State<CitiesShowsHeader> {
           border: null,
           hintText: 'Buscar cidades',
           hintStyle: const TextStyle(color: Colors.white),
-          suffixIcon: Container(
+          suffixIcon: SizedBox(
             width: 15,
-            color: Colors.green,
+            child: Center(child: Assets.icons.iconeSearch.svg(color: Colors.white.withOpacity(0.3))),
           ),
         ),
       ),
