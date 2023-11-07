@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
-class AppNavigationBar extends StatelessWidget {
-  final String title;
+import 'app_text.dart';
 
-  const AppNavigationBar({super.key, required this.title});
+class AppNavigationBar extends StatelessWidget implements PreferredSizeWidget {
+  final String? title;
+
+  const AppNavigationBar({super.key, this.title});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      title: title != null ? AppText(text: title!, style: AppTextStyle.titleLarge) : const SizedBox.shrink(),
+      centerTitle: false,
+      backgroundColor: Colors.transparent,
       elevation: 0,
+      leadingWidth: 30.0,
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
