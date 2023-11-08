@@ -25,7 +25,7 @@ mixin NextShowsInjection {
     getIt.registerLazySingleton<GetCityForecastWeatherUseCase>(() => GetCityForecastWeatherUseCaseImpl(getIt()));
 
     // Data
-    getIt.registerLazySingleton<NextShowsRemoteDataSource>(() => NextShowsRemoteDataSourceImpl(getIt()));
+    getIt.registerLazySingleton<NextShowsRemoteDataSource>(() => NextShowsRemoteDataSourceImpl(getIt(), getIt()));
     getIt.registerLazySingleton<NextShowsLocalDataSource>(() => NextShowsLocalDataSourceImpl(getIt()));
   }
 }
