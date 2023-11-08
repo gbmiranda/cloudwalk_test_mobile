@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../domain/entities/city_forecastt_weather_entity.dart';
+import '../../domain/entities/city_forecast_weather_entity.dart';
 import 'temperature_model.dart';
 import 'weather_model.dart';
 

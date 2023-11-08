@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../common/config/dependency_injection.dart';
 import '../../../../common/widgets/app_loading.dart';
 import '../../../../common/widgets/app_text.dart';
-import '../../domain/entities/city_forecastt_weather_entity.dart';
+import '../../domain/entities/city_forecast_weather_entity.dart';
 import '../bloc/city_forecast_weather_bloc.dart';
 
 class CityForecastWeather extends StatefulWidget {

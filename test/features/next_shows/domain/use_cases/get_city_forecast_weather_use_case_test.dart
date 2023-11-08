@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:cloudwalk_test_mobile_1/common/errors/app_failures.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/data/models/city_forecast_weather_model.dart';
-import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/entities/city_forecastt_weather_entity.dart';
+import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/entities/city_forecast_weather_entity.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/repositories/next_shows_repository.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/use_cases/get_city_forecast_weather_use_case.dart';
 import 'package:dartz/dartz.dart';

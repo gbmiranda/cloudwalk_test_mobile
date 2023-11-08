@@ -4,7 +4,7 @@ import 'package:cloudwalk_test_mobile_1/common/errors/app_failures.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/data/models/city_current_weather_model.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/data/models/city_forecast_weather_model.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/entities/city_current_weather_entity.dart';
-import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/entities/city_forecastt_weather_entity.dart';
+import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/entities/city_forecast_weather_entity.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/entities/location_entity.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/use_cases/get_cities_shows_location_use_case.dart';
 import 'package:cloudwalk_test_mobile_1/features/next_shows/domain/use_cases/get_cities_weather_use_case.dart';

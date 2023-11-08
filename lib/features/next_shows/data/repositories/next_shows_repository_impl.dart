@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import '../../../../common/errors/app_exceptions.dart';
 import '../../../../common/errors/app_failures.dart';
 import '../../domain/entities/city_current_weather_entity.dart';
-import '../../domain/entities/city_forecastt_weather_entity.dart';
+import '../../domain/entities/city_forecast_weather_entity.dart';
 import '../../domain/repositories/next_shows_repository.dart';
 import '../data_sources/next_shows_local_data_source.dart';
 import '../data_sources/next_shows_remote_data_source.dart';

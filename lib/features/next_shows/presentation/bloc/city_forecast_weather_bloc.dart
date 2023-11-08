@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 
 import '../../domain/entities/city_current_weather_entity.dart';
-import '../../domain/entities/city_forecastt_weather_entity.dart';
+import '../../domain/entities/city_forecast_weather_entity.dart';
 import '../../domain/use_cases/get_city_forecast_weather_use_case.dart';
 
 part 'city_forecast_weather_event.dart';
