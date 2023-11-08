@@ -25,6 +25,8 @@ class GetCitiesWeatherUseCaseImpl implements GetCitiesWeatherUseCase {
   Future<Either<AppFailures, List<CityCurrentWeatherEntity>>> call() async {
     final nextCities = getCitiesShowsLocationUseCase.call();
 
+    if (nextCities.isEmpty) return const Left(CustomFailure());
+
     final results = await Future.wait(nextCities.map((city) {
       return getCityCurrentWeatherUseCase.call(city.lat.toString(), city.lon.toString());
     }).toList());
