@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../common/generated/assets.gen.dart';
+import '../../../../common/config/dependency_injection.dart';
+import '../bloc/cities_shows_bloc.dart';
 
 class CitiesShowsHeader extends StatefulWidget {
   const CitiesShowsHeader({super.key});
@@ -10,20 +12,20 @@ class CitiesShowsHeader extends StatefulWidget {
 }
 
 class _CitiesShowsHeaderState extends State<CitiesShowsHeader> {
-  final _txtSearch = TextEditingController();
+  final _citiesShowsBloc = getIt<CitiesShowsBloc>();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: TextFormField(
-        controller: _txtSearch,
         keyboardType: TextInputType.text,
         textCapitalization: TextCapitalization.words,
         style: const TextStyle(color: Colors.white),
         cursorColor: Colors.white,
         maxLines: 1,
         textInputAction: TextInputAction.search,
+        onChanged: (value) => _citiesShowsBloc.add(SearchCitiesShowsWeatherEvent(value)),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(10.0),
           isDense: true,

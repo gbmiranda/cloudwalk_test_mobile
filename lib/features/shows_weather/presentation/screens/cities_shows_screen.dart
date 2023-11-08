@@ -41,8 +41,7 @@ class _CitiesShowsScreenState extends State<CitiesShowsScreen> {
           if (state is CitiesShowsStateError) {
             return const Center(child: AppText(text: ':(', style: AppTextStyle.titleMedium));
           }
-          final successState = state as CitiesShowsStateSuccess;
-          return Column(children: [const CitiesShowsHeader(), CitiesShowsList(cities: successState.cities)]);
+          return const Column(children: [CitiesShowsHeader(), CitiesShowsList()]);
         },
       ),
     );

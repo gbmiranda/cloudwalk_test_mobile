@@ -11,6 +11,7 @@ class CitiesShowsBloc extends Bloc<CitiesShowsEvent, CitiesShowsState> {
 
   CitiesShowsBloc(this.getCitiesWeatherUseCase) : super(CitiesShowsStateLoading()) {
     on<FetchCitiesShowsWeatherEvent>(_onFetchCitiesShowsWeatherEvent);
+    on<SearchCitiesShowsWeatherEvent>(_onSearchCitiesShowsWeatherEvent);
   }
 
   void _onFetchCitiesShowsWeatherEvent(FetchCitiesShowsWeatherEvent event, Emitter<CitiesShowsState> emit) async {
@@ -18,7 +19,13 @@ class CitiesShowsBloc extends Bloc<CitiesShowsEvent, CitiesShowsState> {
     final result = await getCitiesWeatherUseCase();
     result.fold(
       (error) => emit(CitiesShowsStateError(message: ':(')),
-      (cities) => emit(CitiesShowsStateSuccess(cities)),
+      (cities) => emit(CitiesShowsStateSuccess(cities: cities)),
     );
+  }
+
+  void _onSearchCitiesShowsWeatherEvent(SearchCitiesShowsWeatherEvent event, Emitter<CitiesShowsState> emit) async {
+    if (state is CitiesShowsStateSuccess == false) return;
+    final successState = state as CitiesShowsStateSuccess;
+    emit(CitiesShowsStateSuccess(cities: successState.cities, search: event.search));
   }
 }
