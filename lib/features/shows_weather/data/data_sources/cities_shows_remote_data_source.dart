@@ -29,6 +29,8 @@ class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
         default:
           throw const ServerException();
       }
+    } on NetworkException {
+      rethrow;
     } catch (_) {
       throw const ServerException();
     }
@@ -48,6 +50,8 @@ class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
         default:
           throw const ServerException();
       }
+    } on NetworkException {
+      rethrow;
     } catch (_) {
       throw const ServerException();
     }

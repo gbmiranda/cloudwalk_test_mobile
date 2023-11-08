@@ -16,85 +16,66 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppExceptions {
+  String? get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
+    required TResult Function(String? message) storageException,
+    required TResult Function(String? message) networkException,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult? Function(String? message)? storageException,
+    TResult? Function(String? message)? networkException,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult Function(String? message)? storageException,
+    TResult Function(String? message)? networkException,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
     required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
+    required TResult Function(NetworkException value) networkException,
+    required TResult Function(CustomException value) customException,
+    required TResult Function(ServerException value) serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
     TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
+    TResult? Function(NetworkException value)? networkException,
+    TResult? Function(CustomException value)? customException,
+    TResult? Function(ServerException value)? serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
     TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
+    TResult Function(NetworkException value)? networkException,
+    TResult Function(CustomException value)? customException,
+    TResult Function(ServerException value)? serverException,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AppExceptionsCopyWith<AppExceptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -103,6 +84,8 @@ abstract class $AppExceptionsCopyWith<$Res> {
   factory $AppExceptionsCopyWith(
           AppExceptions value, $Res Function(AppExceptions) then) =
       _$AppExceptionsCopyWithImpl<$Res, AppExceptions>;
+  @useResult
+  $Res call({String? message});
 }
 
 /// @nodoc
@@ -114,94 +97,124 @@ class _$AppExceptionsCopyWithImpl<$Res, $Val extends AppExceptions>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_value.copyWith(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$NetworkExceptionCopyWith<$Res> {
-  factory _$$NetworkExceptionCopyWith(
-          _$NetworkException value, $Res Function(_$NetworkException) then) =
-      __$$NetworkExceptionCopyWithImpl<$Res>;
+abstract class _$$StorageExceptionImplCopyWith<$Res>
+    implements $AppExceptionsCopyWith<$Res> {
+  factory _$$StorageExceptionImplCopyWith(_$StorageExceptionImpl value,
+          $Res Function(_$StorageExceptionImpl) then) =
+      __$$StorageExceptionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$NetworkExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$NetworkException>
-    implements _$$NetworkExceptionCopyWith<$Res> {
-  __$$NetworkExceptionCopyWithImpl(
-      _$NetworkException _value, $Res Function(_$NetworkException) _then)
+class __$$StorageExceptionImplCopyWithImpl<$Res>
+    extends _$AppExceptionsCopyWithImpl<$Res, _$StorageExceptionImpl>
+    implements _$$StorageExceptionImplCopyWith<$Res> {
+  __$$StorageExceptionImplCopyWithImpl(_$StorageExceptionImpl _value,
+      $Res Function(_$StorageExceptionImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$StorageExceptionImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$NetworkException implements NetworkException {
-  const _$NetworkException();
+class _$StorageExceptionImpl implements StorageException {
+  const _$StorageExceptionImpl({this.message});
+
+  @override
+  final String? message;
 
   @override
   String toString() {
-    return 'AppExceptions.networkException()';
+    return 'AppExceptions.storageException(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NetworkException);
+        (other.runtimeType == runtimeType &&
+            other is _$StorageExceptionImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StorageExceptionImplCopyWith<_$StorageExceptionImpl> get copyWith =>
+      __$$StorageExceptionImplCopyWithImpl<_$StorageExceptionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
+    required TResult Function(String? message) storageException,
+    required TResult Function(String? message) networkException,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverException,
   }) {
-    return networkException();
+    return storageException(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult? Function(String? message)? storageException,
+    TResult? Function(String? message)? networkException,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverException,
   }) {
-    return networkException?.call();
+    return storageException?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult Function(String? message)? storageException,
+    TResult Function(String? message)? networkException,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverException,
     required TResult orElse(),
   }) {
-    if (networkException != null) {
-      return networkException();
+    if (storageException != null) {
+      return storageException(message);
     }
     return orElse();
   }
@@ -209,16 +222,167 @@ class _$NetworkException implements NetworkException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
     required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
+    required TResult Function(NetworkException value) networkException,
+    required TResult Function(CustomException value) customException,
+    required TResult Function(ServerException value) serverException,
+  }) {
+    return storageException(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StorageException value)? storageException,
+    TResult? Function(NetworkException value)? networkException,
+    TResult? Function(CustomException value)? customException,
+    TResult? Function(ServerException value)? serverException,
+  }) {
+    return storageException?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StorageException value)? storageException,
+    TResult Function(NetworkException value)? networkException,
+    TResult Function(CustomException value)? customException,
+    TResult Function(ServerException value)? serverException,
+    required TResult orElse(),
+  }) {
+    if (storageException != null) {
+      return storageException(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StorageException implements AppExceptions {
+  const factory StorageException({final String? message}) =
+      _$StorageExceptionImpl;
+
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$StorageExceptionImplCopyWith<_$StorageExceptionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NetworkExceptionImplCopyWith<$Res>
+    implements $AppExceptionsCopyWith<$Res> {
+  factory _$$NetworkExceptionImplCopyWith(_$NetworkExceptionImpl value,
+          $Res Function(_$NetworkExceptionImpl) then) =
+      __$$NetworkExceptionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? message});
+}
+
+/// @nodoc
+class __$$NetworkExceptionImplCopyWithImpl<$Res>
+    extends _$AppExceptionsCopyWithImpl<$Res, _$NetworkExceptionImpl>
+    implements _$$NetworkExceptionImplCopyWith<$Res> {
+  __$$NetworkExceptionImplCopyWithImpl(_$NetworkExceptionImpl _value,
+      $Res Function(_$NetworkExceptionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$NetworkExceptionImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NetworkExceptionImpl implements NetworkException {
+  const _$NetworkExceptionImpl({this.message});
+
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'AppExceptions.networkException(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NetworkExceptionImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NetworkExceptionImplCopyWith<_$NetworkExceptionImpl> get copyWith =>
+      __$$NetworkExceptionImplCopyWithImpl<_$NetworkExceptionImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? message) storageException,
+    required TResult Function(String? message) networkException,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        customException,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverException,
+  }) {
+    return networkException(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? message)? storageException,
+    TResult? Function(String? message)? networkException,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        customException,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverException,
+  }) {
+    return networkException?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? message)? storageException,
+    TResult Function(String? message)? networkException,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        customException,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverException,
+    required TResult orElse(),
+  }) {
+    if (networkException != null) {
+      return networkException(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StorageException value) storageException,
+    required TResult Function(NetworkException value) networkException,
+    required TResult Function(CustomException value) customException,
+    required TResult Function(ServerException value) serverException,
   }) {
     return networkException(this);
   }
@@ -226,13 +390,10 @@ class _$NetworkException implements NetworkException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
     TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
+    TResult? Function(NetworkException value)? networkException,
+    TResult? Function(CustomException value)? customException,
+    TResult? Function(ServerException value)? serverException,
   }) {
     return networkException?.call(this);
   }
@@ -240,13 +401,10 @@ class _$NetworkException implements NetworkException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
     TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
+    TResult Function(NetworkException value)? networkException,
+    TResult Function(CustomException value)? customException,
+    TResult Function(ServerException value)? serverException,
     required TResult orElse(),
   }) {
     if (networkException != null) {
@@ -257,231 +415,34 @@ class _$NetworkException implements NetworkException {
 }
 
 abstract class NetworkException implements AppExceptions {
-  const factory NetworkException() = _$NetworkException;
-}
-
-/// @nodoc
-abstract class _$$ServerExceptionCopyWith<$Res> {
-  factory _$$ServerExceptionCopyWith(
-          _$ServerException value, $Res Function(_$ServerException) then) =
-      __$$ServerExceptionCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int? statusCode, String? message, Map<String, dynamic>? data});
-}
-
-/// @nodoc
-class __$$ServerExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$ServerException>
-    implements _$$ServerExceptionCopyWith<$Res> {
-  __$$ServerExceptionCopyWithImpl(
-      _$ServerException _value, $Res Function(_$ServerException) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? statusCode = freezed,
-    Object? message = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_$ServerException(
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      data: freezed == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ServerException implements ServerException {
-  const _$ServerException(
-      {this.statusCode, this.message, final Map<String, dynamic>? data})
-      : _data = data;
+  const factory NetworkException({final String? message}) =
+      _$NetworkExceptionImpl;
 
   @override
-  final int? statusCode;
-  @override
-  final String? message;
-  final Map<String, dynamic>? _data;
-  @override
-  Map<String, dynamic>? get data {
-    final value = _data;
-    if (value == null) return null;
-    if (_data is EqualUnmodifiableMapView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  String toString() {
-    return 'AppExceptions.serverException(statusCode: $statusCode, message: $message, data: $data)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ServerException &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode) &&
-            (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, statusCode, message,
-      const DeepCollectionEquality().hash(_data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ServerExceptionCopyWith<_$ServerException> get copyWith =>
-      __$$ServerExceptionCopyWithImpl<_$ServerException>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
-  }) {
-    return serverException(statusCode, message, data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
-  }) {
-    return serverException?.call(statusCode, message, data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (serverException != null) {
-      return serverException(statusCode, message, data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
-    required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
-  }) {
-    return serverException(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
-    TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
-  }) {
-    return serverException?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
-    TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (serverException != null) {
-      return serverException(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ServerException implements AppExceptions {
-  const factory ServerException(
-      {final int? statusCode,
-      final String? message,
-      final Map<String, dynamic>? data}) = _$ServerException;
-
-  int? get statusCode;
   String? get message;
-  Map<String, dynamic>? get data;
+  @override
   @JsonKey(ignore: true)
-  _$$ServerExceptionCopyWith<_$ServerException> get copyWith =>
+  _$$NetworkExceptionImplCopyWith<_$NetworkExceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CustomExceptionCopyWith<$Res> {
-  factory _$$CustomExceptionCopyWith(
-          _$CustomException value, $Res Function(_$CustomException) then) =
-      __$$CustomExceptionCopyWithImpl<$Res>;
+abstract class _$$CustomExceptionImplCopyWith<$Res>
+    implements $AppExceptionsCopyWith<$Res> {
+  factory _$$CustomExceptionImplCopyWith(_$CustomExceptionImpl value,
+          $Res Function(_$CustomExceptionImpl) then) =
+      __$$CustomExceptionImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String? message, Map<String, dynamic>? data});
 }
 
 /// @nodoc
-class __$$CustomExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$CustomException>
-    implements _$$CustomExceptionCopyWith<$Res> {
-  __$$CustomExceptionCopyWithImpl(
-      _$CustomException _value, $Res Function(_$CustomException) _then)
+class __$$CustomExceptionImplCopyWithImpl<$Res>
+    extends _$AppExceptionsCopyWithImpl<$Res, _$CustomExceptionImpl>
+    implements _$$CustomExceptionImplCopyWith<$Res> {
+  __$$CustomExceptionImplCopyWithImpl(
+      _$CustomExceptionImpl _value, $Res Function(_$CustomExceptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -490,7 +451,7 @@ class __$$CustomExceptionCopyWithImpl<$Res>
     Object? message = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$CustomException(
+    return _then(_$CustomExceptionImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -505,8 +466,8 @@ class __$$CustomExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CustomException implements CustomException {
-  const _$CustomException({this.message, final Map<String, dynamic>? data})
+class _$CustomExceptionImpl implements CustomException {
+  const _$CustomExceptionImpl({this.message, final Map<String, dynamic>? data})
       : _data = data;
 
   @override
@@ -530,7 +491,7 @@ class _$CustomException implements CustomException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CustomException &&
+            other is _$CustomExceptionImpl &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
@@ -542,22 +503,19 @@ class _$CustomException implements CustomException {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CustomExceptionCopyWith<_$CustomException> get copyWith =>
-      __$$CustomExceptionCopyWithImpl<_$CustomException>(this, _$identity);
+  _$$CustomExceptionImplCopyWith<_$CustomExceptionImpl> get copyWith =>
+      __$$CustomExceptionImplCopyWithImpl<_$CustomExceptionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
+    required TResult Function(String? message) storageException,
+    required TResult Function(String? message) networkException,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverException,
   }) {
     return customException(message, data);
   }
@@ -565,16 +523,12 @@ class _$CustomException implements CustomException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult? Function(String? message)? storageException,
+    TResult? Function(String? message)? networkException,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverException,
   }) {
     return customException?.call(message, data);
   }
@@ -582,16 +536,12 @@ class _$CustomException implements CustomException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult Function(String? message)? storageException,
+    TResult Function(String? message)? networkException,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverException,
     required TResult orElse(),
   }) {
     if (customException != null) {
@@ -603,16 +553,10 @@ class _$CustomException implements CustomException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
     required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
+    required TResult Function(NetworkException value) networkException,
+    required TResult Function(CustomException value) customException,
+    required TResult Function(ServerException value) serverException,
   }) {
     return customException(this);
   }
@@ -620,13 +564,10 @@ class _$CustomException implements CustomException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
     TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
+    TResult? Function(NetworkException value)? networkException,
+    TResult? Function(CustomException value)? customException,
+    TResult? Function(ServerException value)? serverException,
   }) {
     return customException?.call(this);
   }
@@ -634,13 +575,10 @@ class _$CustomException implements CustomException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
     TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
+    TResult Function(NetworkException value)? networkException,
+    TResult Function(CustomException value)? customException,
+    TResult Function(ServerException value)? serverException,
     required TResult orElse(),
   }) {
     if (customException != null) {
@@ -653,246 +591,137 @@ class _$CustomException implements CustomException {
 abstract class CustomException implements AppExceptions {
   const factory CustomException(
       {final String? message,
-      final Map<String, dynamic>? data}) = _$CustomException;
+      final Map<String, dynamic>? data}) = _$CustomExceptionImpl;
 
+  @override
   String? get message;
   Map<String, dynamic>? get data;
+  @override
   @JsonKey(ignore: true)
-  _$$CustomExceptionCopyWith<_$CustomException> get copyWith =>
+  _$$CustomExceptionImplCopyWith<_$CustomExceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StorageExceptionCopyWith<$Res> {
-  factory _$$StorageExceptionCopyWith(
-          _$StorageException value, $Res Function(_$StorageException) then) =
-      __$$StorageExceptionCopyWithImpl<$Res>;
+abstract class _$$ServerExceptionImplCopyWith<$Res>
+    implements $AppExceptionsCopyWith<$Res> {
+  factory _$$ServerExceptionImplCopyWith(_$ServerExceptionImpl value,
+          $Res Function(_$ServerExceptionImpl) then) =
+      __$$ServerExceptionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? message, Map<String, dynamic>? data});
 }
 
 /// @nodoc
-class __$$StorageExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$StorageException>
-    implements _$$StorageExceptionCopyWith<$Res> {
-  __$$StorageExceptionCopyWithImpl(
-      _$StorageException _value, $Res Function(_$StorageException) _then)
+class __$$ServerExceptionImplCopyWithImpl<$Res>
+    extends _$AppExceptionsCopyWithImpl<$Res, _$ServerExceptionImpl>
+    implements _$$ServerExceptionImplCopyWith<$Res> {
+  __$$ServerExceptionImplCopyWithImpl(
+      _$ServerExceptionImpl _value, $Res Function(_$ServerExceptionImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_$ServerExceptionImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$StorageException implements StorageException {
-  const _$StorageException();
+class _$ServerExceptionImpl implements ServerException {
+  const _$ServerExceptionImpl({this.message, final Map<String, dynamic>? data})
+      : _data = data;
+
+  @override
+  final String? message;
+  final Map<String, dynamic>? _data;
+  @override
+  Map<String, dynamic>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'AppExceptions.storageException()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StorageException);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
-  }) {
-    return storageException();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
-  }) {
-    return storageException?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (storageException != null) {
-      return storageException();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
-    required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
-  }) {
-    return storageException(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
-    TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
-  }) {
-    return storageException?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
-    TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (storageException != null) {
-      return storageException(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StorageException implements AppExceptions {
-  const factory StorageException() = _$StorageException;
-}
-
-/// @nodoc
-abstract class _$$RequestTimeoutExceptionCopyWith<$Res> {
-  factory _$$RequestTimeoutExceptionCopyWith(_$RequestTimeoutException value,
-          $Res Function(_$RequestTimeoutException) then) =
-      __$$RequestTimeoutExceptionCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RequestTimeoutExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$RequestTimeoutException>
-    implements _$$RequestTimeoutExceptionCopyWith<$Res> {
-  __$$RequestTimeoutExceptionCopyWithImpl(_$RequestTimeoutException _value,
-      $Res Function(_$RequestTimeoutException) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RequestTimeoutException implements RequestTimeoutException {
-  const _$RequestTimeoutException();
-
-  @override
-  String toString() {
-    return 'AppExceptions.requestTimeoutException()';
+    return 'AppExceptions.serverException(message: $message, data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RequestTimeoutException);
+            other is _$ServerExceptionImpl &&
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, message, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ServerExceptionImplCopyWith<_$ServerExceptionImpl> get copyWith =>
+      __$$ServerExceptionImplCopyWithImpl<_$ServerExceptionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
+    required TResult Function(String? message) storageException,
+    required TResult Function(String? message) networkException,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverException,
   }) {
-    return requestTimeoutException();
+    return serverException(message, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult? Function(String? message)? storageException,
+    TResult? Function(String? message)? networkException,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverException,
   }) {
-    return requestTimeoutException?.call();
+    return serverException?.call(message, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
+    TResult Function(String? message)? storageException,
+    TResult Function(String? message)? networkException,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverException,
     required TResult orElse(),
   }) {
-    if (requestTimeoutException != null) {
-      return requestTimeoutException();
+    if (serverException != null) {
+      return serverException(message, data);
     }
     return orElse();
   }
@@ -900,342 +729,51 @@ class _$RequestTimeoutException implements RequestTimeoutException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
     required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
+    required TResult Function(NetworkException value) networkException,
+    required TResult Function(CustomException value) customException,
+    required TResult Function(ServerException value) serverException,
   }) {
-    return requestTimeoutException(this);
+    return serverException(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
     TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
+    TResult? Function(NetworkException value)? networkException,
+    TResult? Function(CustomException value)? customException,
+    TResult? Function(ServerException value)? serverException,
   }) {
-    return requestTimeoutException?.call(this);
+    return serverException?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
     TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (requestTimeoutException != null) {
-      return requestTimeoutException(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RequestTimeoutException implements AppExceptions {
-  const factory RequestTimeoutException() = _$RequestTimeoutException;
-}
-
-/// @nodoc
-abstract class _$$TypeConvertionExceptionCopyWith<$Res> {
-  factory _$$TypeConvertionExceptionCopyWith(_$TypeConvertionException value,
-          $Res Function(_$TypeConvertionException) then) =
-      __$$TypeConvertionExceptionCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TypeConvertionExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$TypeConvertionException>
-    implements _$$TypeConvertionExceptionCopyWith<$Res> {
-  __$$TypeConvertionExceptionCopyWithImpl(_$TypeConvertionException _value,
-      $Res Function(_$TypeConvertionException) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TypeConvertionException implements TypeConvertionException {
-  const _$TypeConvertionException();
-
-  @override
-  String toString() {
-    return 'AppExceptions.typeConvertionException()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TypeConvertionException);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
-  }) {
-    return typeConvertionException();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
-  }) {
-    return typeConvertionException?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (typeConvertionException != null) {
-      return typeConvertionException();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
-    required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
-  }) {
-    return typeConvertionException(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
-    TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
-  }) {
-    return typeConvertionException?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
     TResult Function(NetworkException value)? networkException,
-    TResult Function(ServerException value)? serverException,
     TResult Function(CustomException value)? customException,
-    TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (typeConvertionException != null) {
-      return typeConvertionException(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class TypeConvertionException implements AppExceptions {
-  const factory TypeConvertionException() = _$TypeConvertionException;
-}
-
-/// @nodoc
-abstract class _$$BadRequestExceptionCopyWith<$Res> {
-  factory _$$BadRequestExceptionCopyWith(_$BadRequestException value,
-          $Res Function(_$BadRequestException) then) =
-      __$$BadRequestExceptionCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BadRequestExceptionCopyWithImpl<$Res>
-    extends _$AppExceptionsCopyWithImpl<$Res, _$BadRequestException>
-    implements _$$BadRequestExceptionCopyWith<$Res> {
-  __$$BadRequestExceptionCopyWithImpl(
-      _$BadRequestException _value, $Res Function(_$BadRequestException) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$BadRequestException implements BadRequestException {
-  const _$BadRequestException();
-
-  @override
-  String toString() {
-    return 'AppExceptions.typeBadRequestException()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BadRequestException);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkException,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverException,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customException,
-    required TResult Function() storageException,
-    required TResult Function() requestTimeoutException,
-    required TResult Function() typeConvertionException,
-    required TResult Function() typeBadRequestException,
-  }) {
-    return typeBadRequestException();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkException,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult? Function()? storageException,
-    TResult? Function()? requestTimeoutException,
-    TResult? Function()? typeConvertionException,
-    TResult? Function()? typeBadRequestException,
-  }) {
-    return typeBadRequestException?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkException,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverException,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customException,
-    TResult Function()? storageException,
-    TResult Function()? requestTimeoutException,
-    TResult Function()? typeConvertionException,
-    TResult Function()? typeBadRequestException,
-    required TResult orElse(),
-  }) {
-    if (typeBadRequestException != null) {
-      return typeBadRequestException();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkException value) networkException,
-    required TResult Function(ServerException value) serverException,
-    required TResult Function(CustomException value) customException,
-    required TResult Function(StorageException value) storageException,
-    required TResult Function(RequestTimeoutException value)
-        requestTimeoutException,
-    required TResult Function(TypeConvertionException value)
-        typeConvertionException,
-    required TResult Function(BadRequestException value)
-        typeBadRequestException,
-  }) {
-    return typeBadRequestException(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkException value)? networkException,
-    TResult? Function(ServerException value)? serverException,
-    TResult? Function(CustomException value)? customException,
-    TResult? Function(StorageException value)? storageException,
-    TResult? Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult? Function(TypeConvertionException value)? typeConvertionException,
-    TResult? Function(BadRequestException value)? typeBadRequestException,
-  }) {
-    return typeBadRequestException?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkException value)? networkException,
     TResult Function(ServerException value)? serverException,
-    TResult Function(CustomException value)? customException,
-    TResult Function(StorageException value)? storageException,
-    TResult Function(RequestTimeoutException value)? requestTimeoutException,
-    TResult Function(TypeConvertionException value)? typeConvertionException,
-    TResult Function(BadRequestException value)? typeBadRequestException,
     required TResult orElse(),
   }) {
-    if (typeBadRequestException != null) {
-      return typeBadRequestException(this);
+    if (serverException != null) {
+      return serverException(this);
     }
     return orElse();
   }
 }
 
-abstract class BadRequestException implements AppExceptions {
-  const factory BadRequestException() = _$BadRequestException;
+abstract class ServerException implements AppExceptions {
+  const factory ServerException(
+      {final String? message,
+      final Map<String, dynamic>? data}) = _$ServerExceptionImpl;
+
+  @override
+  String? get message;
+  Map<String, dynamic>? get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$ServerExceptionImplCopyWith<_$ServerExceptionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

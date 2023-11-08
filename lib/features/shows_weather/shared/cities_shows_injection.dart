@@ -18,10 +18,10 @@ mixin CitiesShowsInjection {
     getIt.registerLazySingleton<CityForecastWeatherBloc>(() => CityForecastWeatherBloc(getIt()));
 
     // Domain
-    getIt.registerLazySingleton<CitiesShowsRepository>(() => CitiesShowsRepositoryImpl(getIt()));
+    getIt.registerLazySingleton<CitiesShowsRepository>(() => CitiesShowsRepositoryImpl(getIt(), getIt()));
     getIt.registerLazySingleton<GetCitiesShowsLocationUseCase>(() => GetCitiesShowsLocationUseCaseImpl());
     getIt.registerLazySingleton<GetCityCurrentWeatherUseCase>(() => GetCityCurrentWeatherUseCaseImpl(getIt()));
-    getIt.registerLazySingleton<GetCitiesWeatherUseCase>(() => GetCitiesWeatherUseCaseImpl(getIt(), getIt()));
+    getIt.registerLazySingleton<GetCitiesWeatherUseCase>(() => GetCitiesWeatherUseCaseImpl(getIt(), getIt(), getIt()));
     getIt.registerLazySingleton<GetCityForecastWeatherUseCase>(() => GetCityForecastWeatherUseCaseImpl(getIt()));
 
     // Data

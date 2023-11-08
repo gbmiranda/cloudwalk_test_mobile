@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
@@ -21,6 +22,7 @@ mixin DependencyInjection {
     final sharedPreferences = await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
     getIt.registerLazySingleton(() => Client());
+    getIt.registerLazySingleton<Connectivity>(() => Connectivity());
   }
 
   static void _injectCommons() {

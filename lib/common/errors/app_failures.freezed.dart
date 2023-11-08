@@ -16,90 +16,66 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppFailures {
+  String? get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
+    required TResult Function(String? message) storageFailure,
+    required TResult Function(String? message) networkFailure,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult? Function(String? message)? storageFailure,
+    TResult? Function(String? message)? networkFailure,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult Function(String? message)? storageFailure,
+    TResult Function(String? message)? networkFailure,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
     required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
+    required TResult Function(NetworkFailure value) networkFailure,
+    required TResult Function(CustomFailure value) customFailure,
+    required TResult Function(ServerFailure value) serverFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
     TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult? Function(NetworkFailure value)? networkFailure,
+    TResult? Function(CustomFailure value)? customFailure,
+    TResult? Function(ServerFailure value)? serverFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
     TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult Function(NetworkFailure value)? networkFailure,
+    TResult Function(CustomFailure value)? customFailure,
+    TResult Function(ServerFailure value)? serverFailure,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AppFailuresCopyWith<AppFailures> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -108,6 +84,8 @@ abstract class $AppFailuresCopyWith<$Res> {
   factory $AppFailuresCopyWith(
           AppFailures value, $Res Function(AppFailures) then) =
       _$AppFailuresCopyWithImpl<$Res, AppFailures>;
+  @useResult
+  $Res call({String? message});
 }
 
 /// @nodoc
@@ -119,97 +97,124 @@ class _$AppFailuresCopyWithImpl<$Res, $Val extends AppFailures>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_value.copyWith(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$NetworkFailureCopyWith<$Res> {
-  factory _$$NetworkFailureCopyWith(
-          _$NetworkFailure value, $Res Function(_$NetworkFailure) then) =
-      __$$NetworkFailureCopyWithImpl<$Res>;
+abstract class _$$StorageFailureImplCopyWith<$Res>
+    implements $AppFailuresCopyWith<$Res> {
+  factory _$$StorageFailureImplCopyWith(_$StorageFailureImpl value,
+          $Res Function(_$StorageFailureImpl) then) =
+      __$$StorageFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? message});
 }
 
 /// @nodoc
-class __$$NetworkFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$NetworkFailure>
-    implements _$$NetworkFailureCopyWith<$Res> {
-  __$$NetworkFailureCopyWithImpl(
-      _$NetworkFailure _value, $Res Function(_$NetworkFailure) _then)
+class __$$StorageFailureImplCopyWithImpl<$Res>
+    extends _$AppFailuresCopyWithImpl<$Res, _$StorageFailureImpl>
+    implements _$$StorageFailureImplCopyWith<$Res> {
+  __$$StorageFailureImplCopyWithImpl(
+      _$StorageFailureImpl _value, $Res Function(_$StorageFailureImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$StorageFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$NetworkFailure implements NetworkFailure {
-  const _$NetworkFailure();
+class _$StorageFailureImpl implements StorageFailure {
+  const _$StorageFailureImpl({this.message});
+
+  @override
+  final String? message;
 
   @override
   String toString() {
-    return 'AppFailures.networkFailure()';
+    return 'AppFailures.storageFailure(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NetworkFailure);
+        (other.runtimeType == runtimeType &&
+            other is _$StorageFailureImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StorageFailureImplCopyWith<_$StorageFailureImpl> get copyWith =>
+      __$$StorageFailureImplCopyWithImpl<_$StorageFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
+    required TResult Function(String? message) storageFailure,
+    required TResult Function(String? message) networkFailure,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverFailure,
   }) {
-    return networkFailure();
+    return storageFailure(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult? Function(String? message)? storageFailure,
+    TResult? Function(String? message)? networkFailure,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
   }) {
-    return networkFailure?.call();
+    return storageFailure?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult Function(String? message)? storageFailure,
+    TResult Function(String? message)? networkFailure,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
     required TResult orElse(),
   }) {
-    if (networkFailure != null) {
-      return networkFailure();
+    if (storageFailure != null) {
+      return storageFailure(message);
     }
     return orElse();
   }
@@ -217,16 +222,166 @@ class _$NetworkFailure implements NetworkFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
     required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
+    required TResult Function(NetworkFailure value) networkFailure,
+    required TResult Function(CustomFailure value) customFailure,
+    required TResult Function(ServerFailure value) serverFailure,
+  }) {
+    return storageFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StorageFailure value)? storageFailure,
+    TResult? Function(NetworkFailure value)? networkFailure,
+    TResult? Function(CustomFailure value)? customFailure,
+    TResult? Function(ServerFailure value)? serverFailure,
+  }) {
+    return storageFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StorageFailure value)? storageFailure,
+    TResult Function(NetworkFailure value)? networkFailure,
+    TResult Function(CustomFailure value)? customFailure,
+    TResult Function(ServerFailure value)? serverFailure,
+    required TResult orElse(),
+  }) {
+    if (storageFailure != null) {
+      return storageFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StorageFailure implements AppFailures {
+  const factory StorageFailure({final String? message}) = _$StorageFailureImpl;
+
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$StorageFailureImplCopyWith<_$StorageFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NetworkFailureImplCopyWith<$Res>
+    implements $AppFailuresCopyWith<$Res> {
+  factory _$$NetworkFailureImplCopyWith(_$NetworkFailureImpl value,
+          $Res Function(_$NetworkFailureImpl) then) =
+      __$$NetworkFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? message});
+}
+
+/// @nodoc
+class __$$NetworkFailureImplCopyWithImpl<$Res>
+    extends _$AppFailuresCopyWithImpl<$Res, _$NetworkFailureImpl>
+    implements _$$NetworkFailureImplCopyWith<$Res> {
+  __$$NetworkFailureImplCopyWithImpl(
+      _$NetworkFailureImpl _value, $Res Function(_$NetworkFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$NetworkFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NetworkFailureImpl implements NetworkFailure {
+  const _$NetworkFailureImpl({this.message});
+
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'AppFailures.networkFailure(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NetworkFailureImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NetworkFailureImplCopyWith<_$NetworkFailureImpl> get copyWith =>
+      __$$NetworkFailureImplCopyWithImpl<_$NetworkFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? message) storageFailure,
+    required TResult Function(String? message) networkFailure,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        customFailure,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverFailure,
+  }) {
+    return networkFailure(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? message)? storageFailure,
+    TResult? Function(String? message)? networkFailure,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        customFailure,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
+  }) {
+    return networkFailure?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? message)? storageFailure,
+    TResult Function(String? message)? networkFailure,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        customFailure,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
+    required TResult orElse(),
+  }) {
+    if (networkFailure != null) {
+      return networkFailure(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StorageFailure value) storageFailure,
+    required TResult Function(NetworkFailure value) networkFailure,
+    required TResult Function(CustomFailure value) customFailure,
+    required TResult Function(ServerFailure value) serverFailure,
   }) {
     return networkFailure(this);
   }
@@ -234,14 +389,10 @@ class _$NetworkFailure implements NetworkFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
     TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult? Function(NetworkFailure value)? networkFailure,
+    TResult? Function(CustomFailure value)? customFailure,
+    TResult? Function(ServerFailure value)? serverFailure,
   }) {
     return networkFailure?.call(this);
   }
@@ -249,14 +400,10 @@ class _$NetworkFailure implements NetworkFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
     TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult Function(NetworkFailure value)? networkFailure,
+    TResult Function(CustomFailure value)? customFailure,
+    TResult Function(ServerFailure value)? serverFailure,
     required TResult orElse(),
   }) {
     if (networkFailure != null) {
@@ -267,416 +414,33 @@ class _$NetworkFailure implements NetworkFailure {
 }
 
 abstract class NetworkFailure implements AppFailures {
-  const factory NetworkFailure() = _$NetworkFailure;
-}
-
-/// @nodoc
-abstract class _$$PlatformFailureCopyWith<$Res> {
-  factory _$$PlatformFailureCopyWith(
-          _$PlatformFailure value, $Res Function(_$PlatformFailure) then) =
-      __$$PlatformFailureCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? message});
-}
-
-/// @nodoc
-class __$$PlatformFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$PlatformFailure>
-    implements _$$PlatformFailureCopyWith<$Res> {
-  __$$PlatformFailureCopyWithImpl(
-      _$PlatformFailure _value, $Res Function(_$PlatformFailure) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = freezed,
-  }) {
-    return _then(_$PlatformFailure(
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PlatformFailure implements PlatformFailure {
-  const _$PlatformFailure({this.message});
+  const factory NetworkFailure({final String? message}) = _$NetworkFailureImpl;
 
   @override
-  final String? message;
-
-  @override
-  String toString() {
-    return 'AppFailures.platformFailure(message: $message)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PlatformFailure &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PlatformFailureCopyWith<_$PlatformFailure> get copyWith =>
-      __$$PlatformFailureCopyWithImpl<_$PlatformFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
-  }) {
-    return platformFailure(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
-  }) {
-    return platformFailure?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (platformFailure != null) {
-      return platformFailure(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
-    required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
-  }) {
-    return platformFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
-    TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
-  }) {
-    return platformFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
-    TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (platformFailure != null) {
-      return platformFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlatformFailure implements AppFailures {
-  const factory PlatformFailure({final String? message}) = _$PlatformFailure;
-
   String? get message;
+  @override
   @JsonKey(ignore: true)
-  _$$PlatformFailureCopyWith<_$PlatformFailure> get copyWith =>
+  _$$NetworkFailureImplCopyWith<_$NetworkFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ServerFailureCopyWith<$Res> {
-  factory _$$ServerFailureCopyWith(
-          _$ServerFailure value, $Res Function(_$ServerFailure) then) =
-      __$$ServerFailureCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int? statusCode, String? message, Map<String, dynamic>? data});
-}
-
-/// @nodoc
-class __$$ServerFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$ServerFailure>
-    implements _$$ServerFailureCopyWith<$Res> {
-  __$$ServerFailureCopyWithImpl(
-      _$ServerFailure _value, $Res Function(_$ServerFailure) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
+abstract class _$$CustomFailureImplCopyWith<$Res>
+    implements $AppFailuresCopyWith<$Res> {
+  factory _$$CustomFailureImplCopyWith(
+          _$CustomFailureImpl value, $Res Function(_$CustomFailureImpl) then) =
+      __$$CustomFailureImplCopyWithImpl<$Res>;
   @override
-  $Res call({
-    Object? statusCode = freezed,
-    Object? message = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_$ServerFailure(
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      data: freezed == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ServerFailure implements ServerFailure {
-  const _$ServerFailure(
-      {this.statusCode, this.message, final Map<String, dynamic>? data})
-      : _data = data;
-
-  @override
-  final int? statusCode;
-  @override
-  final String? message;
-  final Map<String, dynamic>? _data;
-  @override
-  Map<String, dynamic>? get data {
-    final value = _data;
-    if (value == null) return null;
-    if (_data is EqualUnmodifiableMapView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  String toString() {
-    return 'AppFailures.serverFailure(statusCode: $statusCode, message: $message, data: $data)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ServerFailure &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode) &&
-            (identical(other.message, message) || other.message == message) &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, statusCode, message,
-      const DeepCollectionEquality().hash(_data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ServerFailureCopyWith<_$ServerFailure> get copyWith =>
-      __$$ServerFailureCopyWithImpl<_$ServerFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
-  }) {
-    return serverFailure(statusCode, message, data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
-  }) {
-    return serverFailure?.call(statusCode, message, data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (serverFailure != null) {
-      return serverFailure(statusCode, message, data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
-    required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
-  }) {
-    return serverFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
-    TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
-  }) {
-    return serverFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
-    TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (serverFailure != null) {
-      return serverFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ServerFailure implements AppFailures {
-  const factory ServerFailure(
-      {final int? statusCode,
-      final String? message,
-      final Map<String, dynamic>? data}) = _$ServerFailure;
-
-  int? get statusCode;
-  String? get message;
-  Map<String, dynamic>? get data;
-  @JsonKey(ignore: true)
-  _$$ServerFailureCopyWith<_$ServerFailure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CustomFailureCopyWith<$Res> {
-  factory _$$CustomFailureCopyWith(
-          _$CustomFailure value, $Res Function(_$CustomFailure) then) =
-      __$$CustomFailureCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message, Map<String, dynamic>? data});
 }
 
 /// @nodoc
-class __$$CustomFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$CustomFailure>
-    implements _$$CustomFailureCopyWith<$Res> {
-  __$$CustomFailureCopyWithImpl(
-      _$CustomFailure _value, $Res Function(_$CustomFailure) _then)
+class __$$CustomFailureImplCopyWithImpl<$Res>
+    extends _$AppFailuresCopyWithImpl<$Res, _$CustomFailureImpl>
+    implements _$$CustomFailureImplCopyWith<$Res> {
+  __$$CustomFailureImplCopyWithImpl(
+      _$CustomFailureImpl _value, $Res Function(_$CustomFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -685,7 +449,7 @@ class __$$CustomFailureCopyWithImpl<$Res>
     Object? message = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$CustomFailure(
+    return _then(_$CustomFailureImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -700,8 +464,8 @@ class __$$CustomFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CustomFailure implements CustomFailure {
-  const _$CustomFailure({this.message, final Map<String, dynamic>? data})
+class _$CustomFailureImpl implements CustomFailure {
+  const _$CustomFailureImpl({this.message, final Map<String, dynamic>? data})
       : _data = data;
 
   @override
@@ -725,7 +489,7 @@ class _$CustomFailure implements CustomFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CustomFailure &&
+            other is _$CustomFailureImpl &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
@@ -737,23 +501,18 @@ class _$CustomFailure implements CustomFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CustomFailureCopyWith<_$CustomFailure> get copyWith =>
-      __$$CustomFailureCopyWithImpl<_$CustomFailure>(this, _$identity);
+  _$$CustomFailureImplCopyWith<_$CustomFailureImpl> get copyWith =>
+      __$$CustomFailureImplCopyWithImpl<_$CustomFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
+    required TResult Function(String? message) storageFailure,
+    required TResult Function(String? message) networkFailure,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverFailure,
   }) {
     return customFailure(message, data);
   }
@@ -761,17 +520,12 @@ class _$CustomFailure implements CustomFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult? Function(String? message)? storageFailure,
+    TResult? Function(String? message)? networkFailure,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
   }) {
     return customFailure?.call(message, data);
   }
@@ -779,17 +533,12 @@ class _$CustomFailure implements CustomFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult Function(String? message)? storageFailure,
+    TResult Function(String? message)? networkFailure,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
     required TResult orElse(),
   }) {
     if (customFailure != null) {
@@ -801,16 +550,10 @@ class _$CustomFailure implements CustomFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
     required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
+    required TResult Function(NetworkFailure value) networkFailure,
+    required TResult Function(CustomFailure value) customFailure,
+    required TResult Function(ServerFailure value) serverFailure,
   }) {
     return customFailure(this);
   }
@@ -818,14 +561,10 @@ class _$CustomFailure implements CustomFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
     TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult? Function(NetworkFailure value)? networkFailure,
+    TResult? Function(CustomFailure value)? customFailure,
+    TResult? Function(ServerFailure value)? serverFailure,
   }) {
     return customFailure?.call(this);
   }
@@ -833,14 +572,10 @@ class _$CustomFailure implements CustomFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
     TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult Function(NetworkFailure value)? networkFailure,
+    TResult Function(CustomFailure value)? customFailure,
+    TResult Function(ServerFailure value)? serverFailure,
     required TResult orElse(),
   }) {
     if (customFailure != null) {
@@ -853,104 +588,136 @@ class _$CustomFailure implements CustomFailure {
 abstract class CustomFailure implements AppFailures {
   const factory CustomFailure(
       {final String? message,
-      final Map<String, dynamic>? data}) = _$CustomFailure;
+      final Map<String, dynamic>? data}) = _$CustomFailureImpl;
 
+  @override
   String? get message;
   Map<String, dynamic>? get data;
+  @override
   @JsonKey(ignore: true)
-  _$$CustomFailureCopyWith<_$CustomFailure> get copyWith =>
+  _$$CustomFailureImplCopyWith<_$CustomFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StorageFailureCopyWith<$Res> {
-  factory _$$StorageFailureCopyWith(
-          _$StorageFailure value, $Res Function(_$StorageFailure) then) =
-      __$$StorageFailureCopyWithImpl<$Res>;
+abstract class _$$ServerFailureImplCopyWith<$Res>
+    implements $AppFailuresCopyWith<$Res> {
+  factory _$$ServerFailureImplCopyWith(
+          _$ServerFailureImpl value, $Res Function(_$ServerFailureImpl) then) =
+      __$$ServerFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? message, Map<String, dynamic>? data});
 }
 
 /// @nodoc
-class __$$StorageFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$StorageFailure>
-    implements _$$StorageFailureCopyWith<$Res> {
-  __$$StorageFailureCopyWithImpl(
-      _$StorageFailure _value, $Res Function(_$StorageFailure) _then)
+class __$$ServerFailureImplCopyWithImpl<$Res>
+    extends _$AppFailuresCopyWithImpl<$Res, _$ServerFailureImpl>
+    implements _$$ServerFailureImplCopyWith<$Res> {
+  __$$ServerFailureImplCopyWithImpl(
+      _$ServerFailureImpl _value, $Res Function(_$ServerFailureImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_$ServerFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$StorageFailure implements StorageFailure {
-  const _$StorageFailure();
+class _$ServerFailureImpl implements ServerFailure {
+  const _$ServerFailureImpl({this.message, final Map<String, dynamic>? data})
+      : _data = data;
+
+  @override
+  final String? message;
+  final Map<String, dynamic>? _data;
+  @override
+  Map<String, dynamic>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'AppFailures.storageFailure()';
+    return 'AppFailures.serverFailure(message: $message, data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StorageFailure);
+        (other.runtimeType == runtimeType &&
+            other is _$ServerFailureImpl &&
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, message, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ServerFailureImplCopyWith<_$ServerFailureImpl> get copyWith =>
+      __$$ServerFailureImplCopyWithImpl<_$ServerFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
+    required TResult Function(String? message) storageFailure,
+    required TResult Function(String? message) networkFailure,
     required TResult Function(String? message, Map<String, dynamic>? data)
         customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
+    required TResult Function(String? message, Map<String, dynamic>? data)
+        serverFailure,
   }) {
-    return storageFailure();
+    return serverFailure(message, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult? Function(String? message)? storageFailure,
+    TResult? Function(String? message)? networkFailure,
     TResult? Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
+    TResult? Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
   }) {
-    return storageFailure?.call();
+    return serverFailure?.call(message, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
+    TResult Function(String? message)? storageFailure,
+    TResult Function(String? message)? networkFailure,
     TResult Function(String? message, Map<String, dynamic>? data)?
         customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
+    TResult Function(String? message, Map<String, dynamic>? data)?
+        serverFailure,
     required TResult orElse(),
   }) {
-    if (storageFailure != null) {
-      return storageFailure();
+    if (serverFailure != null) {
+      return serverFailure(message, data);
     }
     return orElse();
   }
@@ -958,502 +725,51 @@ class _$StorageFailure implements StorageFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
     required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
+    required TResult Function(NetworkFailure value) networkFailure,
+    required TResult Function(CustomFailure value) customFailure,
+    required TResult Function(ServerFailure value) serverFailure,
   }) {
-    return storageFailure(this);
+    return serverFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
     TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
+    TResult? Function(NetworkFailure value)? networkFailure,
+    TResult? Function(CustomFailure value)? customFailure,
+    TResult? Function(ServerFailure value)? serverFailure,
   }) {
-    return storageFailure?.call(this);
+    return serverFailure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
     TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (storageFailure != null) {
-      return storageFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StorageFailure implements AppFailures {
-  const factory StorageFailure() = _$StorageFailure;
-}
-
-/// @nodoc
-abstract class _$$RequestTimeoutFailureCopyWith<$Res> {
-  factory _$$RequestTimeoutFailureCopyWith(_$RequestTimeoutFailure value,
-          $Res Function(_$RequestTimeoutFailure) then) =
-      __$$RequestTimeoutFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RequestTimeoutFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$RequestTimeoutFailure>
-    implements _$$RequestTimeoutFailureCopyWith<$Res> {
-  __$$RequestTimeoutFailureCopyWithImpl(_$RequestTimeoutFailure _value,
-      $Res Function(_$RequestTimeoutFailure) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$RequestTimeoutFailure implements RequestTimeoutFailure {
-  const _$RequestTimeoutFailure();
-
-  @override
-  String toString() {
-    return 'AppFailures.requestTimeoutFailure()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RequestTimeoutFailure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
-  }) {
-    return requestTimeoutFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
-  }) {
-    return requestTimeoutFailure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (requestTimeoutFailure != null) {
-      return requestTimeoutFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
-    required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
-  }) {
-    return requestTimeoutFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
-    TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
-  }) {
-    return requestTimeoutFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
     TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CustomFailure value)? customFailure,
-    TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (requestTimeoutFailure != null) {
-      return requestTimeoutFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RequestTimeoutFailure implements AppFailures {
-  const factory RequestTimeoutFailure() = _$RequestTimeoutFailure;
-}
-
-/// @nodoc
-abstract class _$$TypeConvertionFailureCopyWith<$Res> {
-  factory _$$TypeConvertionFailureCopyWith(_$TypeConvertionFailure value,
-          $Res Function(_$TypeConvertionFailure) then) =
-      __$$TypeConvertionFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TypeConvertionFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$TypeConvertionFailure>
-    implements _$$TypeConvertionFailureCopyWith<$Res> {
-  __$$TypeConvertionFailureCopyWithImpl(_$TypeConvertionFailure _value,
-      $Res Function(_$TypeConvertionFailure) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TypeConvertionFailure implements TypeConvertionFailure {
-  const _$TypeConvertionFailure();
-
-  @override
-  String toString() {
-    return 'AppFailures.typeConvertionFailure()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TypeConvertionFailure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
-  }) {
-    return typeConvertionFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
-  }) {
-    return typeConvertionFailure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (typeConvertionFailure != null) {
-      return typeConvertionFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
-    required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
-  }) {
-    return typeConvertionFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
-    TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
-  }) {
-    return typeConvertionFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
     TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
-    TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
     required TResult orElse(),
   }) {
-    if (typeConvertionFailure != null) {
-      return typeConvertionFailure(this);
+    if (serverFailure != null) {
+      return serverFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class TypeConvertionFailure implements AppFailures {
-  const factory TypeConvertionFailure() = _$TypeConvertionFailure;
-}
-
-/// @nodoc
-abstract class _$$BadRequestFailureCopyWith<$Res> {
-  factory _$$BadRequestFailureCopyWith(
-          _$BadRequestFailure value, $Res Function(_$BadRequestFailure) then) =
-      __$$BadRequestFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BadRequestFailureCopyWithImpl<$Res>
-    extends _$AppFailuresCopyWithImpl<$Res, _$BadRequestFailure>
-    implements _$$BadRequestFailureCopyWith<$Res> {
-  __$$BadRequestFailureCopyWithImpl(
-      _$BadRequestFailure _value, $Res Function(_$BadRequestFailure) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$BadRequestFailure implements BadRequestFailure {
-  const _$BadRequestFailure();
+abstract class ServerFailure implements AppFailures {
+  const factory ServerFailure(
+      {final String? message,
+      final Map<String, dynamic>? data}) = _$ServerFailureImpl;
 
   @override
-  String toString() {
-    return 'AppFailures.typeBadRequestFailure()';
-  }
-
+  String? get message;
+  Map<String, dynamic>? get data;
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BadRequestFailure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() networkFailure,
-    required TResult Function(String? message) platformFailure,
-    required TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)
-        serverFailure,
-    required TResult Function(String? message, Map<String, dynamic>? data)
-        customFailure,
-    required TResult Function() storageFailure,
-    required TResult Function() requestTimeoutFailure,
-    required TResult Function() typeConvertionFailure,
-    required TResult Function() typeBadRequestFailure,
-  }) {
-    return typeBadRequestFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? networkFailure,
-    TResult? Function(String? message)? platformFailure,
-    TResult? Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult? Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult? Function()? storageFailure,
-    TResult? Function()? requestTimeoutFailure,
-    TResult? Function()? typeConvertionFailure,
-    TResult? Function()? typeBadRequestFailure,
-  }) {
-    return typeBadRequestFailure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? networkFailure,
-    TResult Function(String? message)? platformFailure,
-    TResult Function(
-            int? statusCode, String? message, Map<String, dynamic>? data)?
-        serverFailure,
-    TResult Function(String? message, Map<String, dynamic>? data)?
-        customFailure,
-    TResult Function()? storageFailure,
-    TResult Function()? requestTimeoutFailure,
-    TResult Function()? typeConvertionFailure,
-    TResult Function()? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (typeBadRequestFailure != null) {
-      return typeBadRequestFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkFailure value) networkFailure,
-    required TResult Function(PlatformFailure value) platformFailure,
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(CustomFailure value) customFailure,
-    required TResult Function(StorageFailure value) storageFailure,
-    required TResult Function(RequestTimeoutFailure value)
-        requestTimeoutFailure,
-    required TResult Function(TypeConvertionFailure value)
-        typeConvertionFailure,
-    required TResult Function(BadRequestFailure value) typeBadRequestFailure,
-  }) {
-    return typeBadRequestFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NetworkFailure value)? networkFailure,
-    TResult? Function(PlatformFailure value)? platformFailure,
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(CustomFailure value)? customFailure,
-    TResult? Function(StorageFailure value)? storageFailure,
-    TResult? Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult? Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult? Function(BadRequestFailure value)? typeBadRequestFailure,
-  }) {
-    return typeBadRequestFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkFailure value)? networkFailure,
-    TResult Function(PlatformFailure value)? platformFailure,
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(CustomFailure value)? customFailure,
-    TResult Function(StorageFailure value)? storageFailure,
-    TResult Function(RequestTimeoutFailure value)? requestTimeoutFailure,
-    TResult Function(TypeConvertionFailure value)? typeConvertionFailure,
-    TResult Function(BadRequestFailure value)? typeBadRequestFailure,
-    required TResult orElse(),
-  }) {
-    if (typeBadRequestFailure != null) {
-      return typeBadRequestFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BadRequestFailure implements AppFailures {
-  const factory BadRequestFailure() = _$BadRequestFailure;
+  @JsonKey(ignore: true)
+  _$$ServerFailureImplCopyWith<_$ServerFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
