@@ -11,7 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../fixtures/fixture_reader.dart';
+import '../../../../fixtures/fixture_reader.dart';
 
 class MockAppHttpClient extends Mock implements AppHttpClient {}
 
@@ -62,7 +62,6 @@ void main() {
 
   group('getCityForecasts tests', () {
     final json = fixture('forecast_weather.json');
-
     late List<CityForecastWeatherModel> models;
 
     setUp(() {

@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../fixtures/fixture_reader.dart';
+import '../../../../fixtures/fixture_reader.dart';
 
 class MockSharedPreferences extends Mock implements SharedPreferences {}
 
@@ -24,7 +24,6 @@ void main() {
 
   group('cityCurrentWeather tests', () {
     final json = fixture('current_weather.json');
-
     late CityCurrentWeatherModel model;
 
     setUp(() {

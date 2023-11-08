@@ -26,7 +26,3 @@ extension WeatherModelExtension on WeatherModel {
     return WeatherEntity(id, main, description, icon);
   }
 }
-
-extension WeatherModelListExtension on List<WeatherModel> {
-  List<WeatherEntity> toEntityList() => map((e) => e.toEntity()).toList();
-}
