@@ -6,10 +6,6 @@ sh scripts/import_files_coverage.sh cloudwalk_test_mobile_1
 flutter test --coverage
 lcov --ignore-errors unused --remove coverage/lcov.info \
 'lib/main.dart' \
-# 'lib/common/*' \
-# 'lib/common/config/*' \
-# 'lib/common/layout/*' \
-# 'lib/common/utils/*' \
 'lib/*/widgets/*' \
 'lib/*/screens/*' \
 'lib/*/*_injection.dart' \
