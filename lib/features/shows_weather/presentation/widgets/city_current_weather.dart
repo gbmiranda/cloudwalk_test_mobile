@@ -1,32 +1,35 @@
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/app_text.dart';
+import '../../domain/entities/city_current_weather_entity.dart';
 
 class CityCurrentWeather extends StatelessWidget {
-  const CityCurrentWeather({super.key});
+  final CityCurrentWeatherEntity cityCurrentWeather;
+
+  const CityCurrentWeather({super.key, required this.cityCurrentWeather});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         AppText(
-          text: 'Belo Horizonte',
+          text: cityCurrentWeather.title,
           style: AppTextStyle.titleMedium,
-          margin: EdgeInsets.only(bottom: 15.0),
+          margin: const EdgeInsets.only(bottom: 15.0),
         ),
         AppText(
-          text: '29º',
+          text: cityCurrentWeather.celsius,
           style: AppTextStyle.titleExtraLarge,
-          margin: EdgeInsets.only(bottom: 15.0),
+          margin: const EdgeInsets.only(bottom: 15.0),
         ),
         AppText(
-          text: 'Predominantemente Ensolarado',
+          text: cityCurrentWeather.sky,
           style: AppTextStyle.titleSmall,
           maxLines: 2,
-          margin: EdgeInsets.only(bottom: 5.0),
+          margin: const EdgeInsets.only(bottom: 5.0),
         ),
         AppText(
-          text: 'Máx.: 29º | Mín.: 17º',
+          text: cityCurrentWeather.celsiusInterval,
           style: AppTextStyle.titleSmall,
         ),
       ],

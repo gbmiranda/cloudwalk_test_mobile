@@ -18,6 +18,8 @@ class CitiesShowsRepositoryImpl extends CitiesShowsRepository {
   Future<Either<AppFailures, CityCurrentWeatherEntity>> getLocationWeather(String lat, String lon) async {
     try {
       final result = await remoteDataSource.getLocationWeather(lat, lon);
+      // TODO: persist local
+      // TODO: return local when offline
       return Right(result.toEntity());
     } on ServerException {
       return const Left(ServerFailure());
@@ -27,9 +29,11 @@ class CitiesShowsRepositoryImpl extends CitiesShowsRepository {
   }
 
   @override
-  Future<Either<AppFailures, List<CityForecastWeatherEntity>>> getCityForecast(String lat, String lon) async {
+  Future<Either<AppFailures, List<CityForecastWeatherEntity>>> getCityForecasts(String lat, String lon) async {
     try {
-      final result = await remoteDataSource.getCityForecast(lat, lon);
+      final result = await remoteDataSource.getCityForecasts(lat, lon);
+      // TODO: persist local
+      // TODO: return local when offline
       return Right(result.toEntityList());
     } on ServerException {
       return const Left(ServerFailure());

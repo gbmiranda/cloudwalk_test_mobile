@@ -17,7 +17,7 @@ class CitiesShowsBloc extends Bloc<CitiesShowsEvent, CitiesShowsState> {
     emit(CitiesShowsStateLoading());
     final result = await getCitiesWeatherUseCase();
     result.fold(
-      (error) => emit(CitiesShowsStateError()),
+      (error) => emit(CitiesShowsStateError(message: ':(')),
       (cities) => emit(CitiesShowsStateSuccess(cities)),
     );
   }

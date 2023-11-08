@@ -12,12 +12,12 @@ class CityForecastWeatherModel extends Equatable {
   final int? id;
   final int? timezone;
   final String? name;
-  final WeatherModel? weather;
+  final List<WeatherModel>? weather;
 
-  @JsonValue('dt')
+  @JsonKey(name: 'dt')
   final int? dateTime;
 
-  @JsonValue('main')
+  @JsonKey(name: 'main')
   final TemperatureModel? temperature;
 
   const CityForecastWeatherModel(
@@ -43,7 +43,7 @@ extension CityForecastWeatherModelExtension on CityForecastWeatherModel {
       timezone,
       dateTime,
       name,
-      weather?.toEntity(),
+      weather?.map((item) => item.toEntity()).toList(),
       temperature?.toEntity(),
     );
   }

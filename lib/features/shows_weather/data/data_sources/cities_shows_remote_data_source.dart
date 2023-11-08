@@ -8,7 +8,7 @@ import '../models/city_forecast_weather_model.dart';
 
 abstract class CitiesShowsRemoteDataSource {
   Future<CityCurrentWeatherModel> getLocationWeather(String lat, String lon);
-  Future<List<CityForecastWeatherModel>> getCityForecast(String lat, String lon);
+  Future<List<CityForecastWeatherModel>> getCityForecasts(String lat, String lon);
 }
 
 class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
@@ -19,17 +19,8 @@ class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
   @override
   Future<CityCurrentWeatherModel> getLocationWeather(String lat, String lon) async {
     try {
-      final uri = Uri(
-        scheme: 'https',
-        host: 'api.openweathermap.org',
-        pathSegments: ['data', '2.5', 'weather'],
-        queryParameters: {
-          'lat': lat,
-          'lon': lon,
-          'units': 'metric',
-          'appid': '0255820733c4496d3f0e801c575d76cc',
-        },
-      );
+      final uri = _createUri(path: 'weather', lat: lat, lon: lon);
+
       final response = await appHttpClient.get(uri);
       switch (response.statusCode) {
         case HttpStatus.ok:
@@ -44,23 +35,15 @@ class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
   }
 
   @override
-  Future<List<CityForecastWeatherModel>> getCityForecast(String lat, String lon) async {
+  Future<List<CityForecastWeatherModel>> getCityForecasts(String lat, String lon) async {
     try {
-      final uri = Uri(
-        scheme: 'https',
-        host: 'api.openweathermap.org',
-        pathSegments: ['data', '2.5', 'weather'],
-        queryParameters: {
-          'lat': lat,
-          'lon': lon,
-          'units': 'metric',
-          'appid': '0255820733c4496d3f0e801c575d76cc',
-        },
-      );
+      final uri = _createUri(path: 'forecast', lat: lat, lon: lon);
+
       final response = await appHttpClient.get(uri);
       switch (response.statusCode) {
         case HttpStatus.ok:
-          final jsonList = jsonDecode(response.body) as List;
+          final jsonMap = jsonDecode(response.body) as Map;
+          final jsonList = jsonMap['list'] as List;
           return jsonList.map((json) => CityForecastWeatherModel.fromJson(json)).toList();
         default:
           throw const ServerException();
@@ -68,5 +51,21 @@ class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
     } catch (_) {
       throw const ServerException();
     }
+  }
+
+  Uri _createUri({required String path, required String lat, required String lon}) {
+    const appid = '0255820733c4496d3f0e801c575d76cc'; // TODO: remoteConfig
+    const host = 'api.openweathermap.org'; // TODO: remoteConfig
+    return Uri(
+      scheme: 'https',
+      host: host,
+      pathSegments: ['data', '2.5', path],
+      queryParameters: {
+        'lat': lat,
+        'lon': lon,
+        'units': 'metric',
+        'appid': appid,
+      },
+    );
   }
 }

@@ -6,5 +6,5 @@ import '../entities/city_forecastt_weather_entity.dart';
 
 abstract class CitiesShowsRepository {
   Future<Either<AppFailures, CityCurrentWeatherEntity>> getLocationWeather(String lat, String lon);
-  Future<Either<AppFailures, List<CityForecastWeatherEntity>>> getCityForecast(String lat, String lon);
+  Future<Either<AppFailures, List<CityForecastWeatherEntity>>> getCityForecasts(String lat, String lon);
 }

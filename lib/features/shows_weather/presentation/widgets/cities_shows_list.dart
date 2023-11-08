@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../../common/utils/keyboard_utils.dart';
 import '../../../../../common/widgets/app_form_interaction.dart';
 import '../../../../../common/widgets/app_text.dart';
+import '../../../../common/config/dependency_injection.dart';
+import '../../../../common/router/app_router.dart';
+import '../../../../common/router/app_router.gr.dart';
 import '../../domain/entities/city_current_weather_entity.dart';
 
 class CitiesShowsList extends StatefulWidget {
@@ -27,7 +30,7 @@ class _CitiesShowsListState extends State<CitiesShowsList> {
             return GestureDetector(
               onTap: () {
                 KeyboardUtils.hideKeyboard();
-                // getIt<AppRouter>().navigate( CityForecastWeatherRoute(cityCurrentWeather: , cityForecastWeather: ));
+                getIt<AppRouter>().navigate(CityForecastWeatherRoute(cityCurrentWeather: city));
               },
               child: Container(
                 margin: EdgeInsets.only(bottom: city == widget.cities.last ? 0.0 : 15.0),

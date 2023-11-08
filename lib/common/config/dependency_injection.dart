@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/shows_weather/shared/cities_shows_injection.dart';
 import '../library/app_http_client.dart';
@@ -11,12 +12,14 @@ final getIt = GetIt.instance;
 mixin DependencyInjection {
   static Future<void> init() async {
     WidgetsFlutterBinding.ensureInitialized();
-    _injectExternalLibs();
+    await _injectExternalLibs();
     _injectCommons();
     _injectFeatures();
   }
 
-  static void _injectExternalLibs() {
+  static Future<void> _injectExternalLibs() async {
+    final sharedPreferences = await SharedPreferences.getInstance();
+    getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
     getIt.registerLazySingleton(() => Client());
   }
 

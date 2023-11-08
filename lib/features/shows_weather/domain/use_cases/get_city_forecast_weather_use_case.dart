@@ -15,6 +15,6 @@ class GetCityForecastWeatherUseCaseImpl implements GetCityForecastWeatherUseCase
 
   @override
   Future<Either<AppFailures, List<CityForecastWeatherEntity>>> call(String lat, String lon) async {
-    return repository.getCityForecast(lat, lon);
+    return repository.getCityForecasts(lat, lon);
   }
 }

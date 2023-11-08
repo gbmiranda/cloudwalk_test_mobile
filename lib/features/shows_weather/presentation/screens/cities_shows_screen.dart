@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../common/config/dependency_injection.dart';
 import '../../../../../common/widgets/app_navigation_bar.dart';
 import '../../../../../common/widgets/app_text.dart';
+import '../../../../common/widgets/app_loading.dart';
 import '../bloc/cities_shows_bloc.dart';
 import '../widgets/cities_shows_header.dart';
 import '../widgets/cities_shows_list.dart';
@@ -35,7 +36,7 @@ class _CitiesShowsScreenState extends State<CitiesShowsScreen> {
         bloc: _citiesShowsBloc,
         builder: (context, state) {
           if (state is CitiesShowsStateLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const AppLoading(isCenter: true);
           }
           if (state is CitiesShowsStateError) {
             return const Center(child: AppText(text: ':(', style: AppTextStyle.titleMedium));
