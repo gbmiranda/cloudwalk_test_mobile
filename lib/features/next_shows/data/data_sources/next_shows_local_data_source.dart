@@ -6,20 +6,20 @@ import '../../../../common/errors/app_exceptions.dart';
 import '../models/city_current_weather_model.dart';
 import '../models/city_forecast_weather_model.dart';
 
-abstract class CitiesShowsLocalDataSource {
+abstract class NextShowsLocalDataSource {
   CityCurrentWeatherModel? getCityCurrentWeatherModel(String lat, String lon);
   List<CityForecastWeatherModel>? getCityForecasts(String lat, String lon);
   Future<bool> persistCityCurrentWeatherModel(String lat, String lon, CityCurrentWeatherModel model);
   Future<bool> persistCityForecasts(String lat, String lon, List<CityForecastWeatherModel> models);
 }
 
-class CitiesShowsLocalDataSourceImpl implements CitiesShowsLocalDataSource {
+class NextShowsLocalDataSourceImpl implements NextShowsLocalDataSource {
   static const _currentKeyPrefix = 'current';
   static const _forecastKeyPrefix = 'forecast';
 
   final SharedPreferences sharedPreferences;
 
-  CitiesShowsLocalDataSourceImpl(this.sharedPreferences);
+  NextShowsLocalDataSourceImpl(this.sharedPreferences);
 
   @override
   Future<bool> persistCityCurrentWeatherModel(String lat, String lon, CityCurrentWeatherModel model) {

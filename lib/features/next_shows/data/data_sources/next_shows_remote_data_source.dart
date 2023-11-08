@@ -6,15 +6,15 @@ import '../../../../common/library/app_http_client.dart';
 import '../models/city_current_weather_model.dart';
 import '../models/city_forecast_weather_model.dart';
 
-abstract class CitiesShowsRemoteDataSource {
+abstract class NextShowsRemoteDataSource {
   Future<CityCurrentWeatherModel> getLocationWeather(String lat, String lon);
   Future<List<CityForecastWeatherModel>> getCityForecasts(String lat, String lon);
 }
 
-class CitiesShowsRemoteDataSourceImpl implements CitiesShowsRemoteDataSource {
+class NextShowsRemoteDataSourceImpl implements NextShowsRemoteDataSource {
   final AppHttpClient appHttpClient;
 
-  CitiesShowsRemoteDataSourceImpl(this.appHttpClient);
+  NextShowsRemoteDataSourceImpl(this.appHttpClient);
 
   @override
   Future<CityCurrentWeatherModel> getLocationWeather(String lat, String lon) async {

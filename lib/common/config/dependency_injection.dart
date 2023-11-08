@@ -4,7 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../features/shows_weather/shared/cities_shows_injection.dart';
+import '../../features/next_shows/shared/next_shows_injection.dart';
 import '../library/app_http_client.dart';
 import '../router/app_router.dart';
 
@@ -33,7 +33,7 @@ mixin DependencyInjection {
 
   static void _injectFeatures() {
     Future.wait([
-      CitiesShowsInjection.inject(getIt),
+      NextShowsInjection.inject(getIt),
     ]);
   }
 }

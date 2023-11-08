@@ -4,17 +4,17 @@ import '../../../../common/errors/app_exceptions.dart';
 import '../../../../common/errors/app_failures.dart';
 import '../../domain/entities/city_current_weather_entity.dart';
 import '../../domain/entities/city_forecastt_weather_entity.dart';
-import '../../domain/repositories/cities_shows_repository.dart';
-import '../data_sources/cities_shows_local_data_source.dart';
-import '../data_sources/cities_shows_remote_data_source.dart';
+import '../../domain/repositories/next_shows_repository.dart';
+import '../data_sources/next_shows_local_data_source.dart';
+import '../data_sources/next_shows_remote_data_source.dart';
 import '../models/city_current_weather_model.dart';
 import '../models/city_forecast_weather_model.dart';
 
-class CitiesShowsRepositoryImpl extends CitiesShowsRepository {
-  final CitiesShowsRemoteDataSource remoteDataSource;
-  final CitiesShowsLocalDataSource localDataSource;
+class NextShowsRepositoryImpl extends NextShowsRepository {
+  final NextShowsRemoteDataSource remoteDataSource;
+  final NextShowsLocalDataSource localDataSource;
 
-  CitiesShowsRepositoryImpl(this.remoteDataSource, this.localDataSource);
+  NextShowsRepositoryImpl(this.remoteDataSource, this.localDataSource);
 
   @override
   Future<Either<AppFailures, CityCurrentWeatherEntity>> getLocationWeather(String lat, String lon) async {
