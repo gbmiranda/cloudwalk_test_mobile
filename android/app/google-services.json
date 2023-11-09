@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "378131540445",
+    "project_id": "cloudwalk-test-mobile",
+    "storage_bucket": "cloudwalk-test-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378131540445:android:618c880dc7efee0bd0ae34",
+        "android_client_info": {
+          "package_name": "com.cloudwalk.gbmiranda.test.cloudwalk_test_mobile_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjjltkjQfaeneBqeF1bNrR2Oj-KNlB5ZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

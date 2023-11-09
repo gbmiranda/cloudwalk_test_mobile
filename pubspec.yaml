@@ -23,7 +23,9 @@ dependencies:
   http: ^1.1.0
   freezed_annotation: ^2.2.0
   shared_preferences: ^2.2.1
-  connectivity_plus: ^4.0.0
+  flutter_svg: ^2.0.7
+  firebase_core: ^2.17.0
+  firebase_remote_config: ^4.2.7
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +37,35 @@ dev_dependencies:
   bloc_test: ^9.1.4
   flutter_gen_runner: ^5.3.2
   json_serializable: ^6.7.0
+  freezed: ^2.3.2
+
+flutter_gen:
+  output: lib/common/generated/
+  integrations:
+    flutter_svg: true
 
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/fonts/
+
+  fonts:
+    - family: Lexend
+      fonts:
+        - asset: assets/fonts/Lexend-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lexend-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Lexend-Bold.ttf
+          weight: 700
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
