@@ -12,9 +12,15 @@ class CitiesShowsStateSuccess extends CitiesShowsState {
   final String? search;
 
   CitiesShowsStateSuccess({this.cities, this.search});
+
+  @override
+  List<Object?> get props => [cities, search];
 }
 
 class CitiesShowsStateError extends CitiesShowsState {
   final String? message;
   CitiesShowsStateError({this.message});
+
+  @override
+  List<Object?> get props => [message];
 }
