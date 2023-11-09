@@ -72,19 +72,26 @@ class _CityForecastWeatherState extends State<CityForecastWeather> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppText(
-                              text: forecast.timeStr,
-                              style: AppTextStyle.bodyMedium,
+                            Flexible(
+                              child: IntrinsicHeight(
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    AppText(text: forecast.timeStr, style: AppTextStyle.bodyMedium),
+                                    AppText(
+                                      text: '• ${forecast.sky}',
+                                      style: AppTextStyle.bodyMedium,
+                                      margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                                      expanded: true,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
-                            AppText(
-                              text: '- ${forecast.sky}',
-                              style: AppTextStyle.bodyMedium,
-                              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                            ),
-                            const Spacer(),
                             AppText(
                               text: forecast.celsiusInterval,
                               style: AppTextStyle.bodyMedium,
+                              expanded: true,
                             ),
                           ],
                         ),

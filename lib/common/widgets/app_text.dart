@@ -71,6 +71,7 @@ class AppText extends StatelessWidget {
   final Color color;
   final AppTextStyle style;
   final EdgeInsets? margin;
+  final bool expanded;
 
   const AppText({
     super.key,
@@ -79,11 +80,12 @@ class AppText extends StatelessWidget {
     this.color = Colors.white,
     this.maxLines = 1,
     this.margin,
+    this.expanded = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final widget = Container(
       margin: margin,
       child: Text(
         text,
@@ -103,5 +105,9 @@ class AppText extends StatelessWidget {
         ),
       ),
     );
+    if (expanded) {
+      return Flexible(child: widget);
+    }
+    return widget;
   }
 }

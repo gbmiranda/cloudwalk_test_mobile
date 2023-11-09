@@ -35,7 +35,7 @@ class _CitiesShowsHeaderState extends State<CitiesShowsHeader> {
           enabledBorder: _inputBorder(),
           disabledBorder: _inputBorder(),
           border: null,
-          hintText: 'Buscar cidades',
+          hintText: 'Search cities',
           hintStyle: const TextStyle(color: Colors.white),
           suffixIcon: SizedBox(
             width: 15,

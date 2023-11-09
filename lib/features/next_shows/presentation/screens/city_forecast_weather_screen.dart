@@ -33,7 +33,7 @@ class _CityForecastWeatherScreenState extends State<CityForecastWeatherScreen> {
       appBar: const AppNavigationBar(title: 'Forecast'),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

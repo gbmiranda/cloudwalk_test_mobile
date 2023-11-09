@@ -33,7 +33,7 @@ class _CitiesShowsListState extends State<CitiesShowsList> {
         return Expanded(
           child: AppFormInteraction(
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
               itemCount: filteredCities?.length,
               itemBuilder: (context, index) {
                 final city = filteredCities![index];
@@ -49,32 +49,31 @@ class _CitiesShowsListState extends State<CitiesShowsList> {
                       color: Colors.white.withOpacity(0.5),
                       borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                     ),
-                    child: IntrinsicHeight(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Column(
+                      children: [
+                        IntrinsicHeight(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              AppText(text: city.title, style: AppTextStyle.titleMedium),
-                              const Spacer(),
-                              AppText(text: city.sky, style: AppTextStyle.bodyMedium),
-                            ],
-                          ),
-                          const SizedBox(width: 10.0),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
+                              AppText(text: city.title, style: AppTextStyle.titleMedium, expanded: true),
                               AppText(
                                 text: city.celsius,
                                 style: AppTextStyle.titleLarge,
                                 margin: const EdgeInsets.only(bottom: 5.0),
                               ),
-                              AppText(text: city.celsiusInterval, style: AppTextStyle.bodyMedium),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        IntrinsicHeight(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AppText(text: city.sky, style: AppTextStyle.bodyMedium, expanded: true),
+                              AppText(text: city.celsiusInterval, style: AppTextStyle.bodyMedium, expanded: true),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 );
