@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 
 import '../../domain/entities/city_current_weather_entity.dart';
 import '../../domain/use_cases/get_cities_weather_use_case.dart';

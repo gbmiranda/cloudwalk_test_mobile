@@ -1,6 +1,6 @@
 part of 'cities_shows_bloc.dart';
 
-sealed class CitiesShowsEvent {}
+abstract class CitiesShowsEvent {}
 
 class FetchCitiesShowsWeatherEvent extends CitiesShowsEvent {}
 

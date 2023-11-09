@@ -1,6 +1,9 @@
 part of 'city_forecast_weather_bloc.dart';
 
-sealed class CityForecastWeatherState {}
+sealed class CityForecastWeatherState extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class CityForecastWeatherStateLoading extends CityForecastWeatherState {}
 

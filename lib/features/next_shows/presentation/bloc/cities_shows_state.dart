@@ -1,6 +1,9 @@
 part of 'cities_shows_bloc.dart';
 
-sealed class CitiesShowsState {}
+sealed class CitiesShowsState extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class CitiesShowsStateLoading extends CitiesShowsState {}
 
